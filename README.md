@@ -3,10 +3,10 @@ Scrum explained in DOT notation
 
 ### Scrum Theory
 
-![What is Scrum?](https://g.gravizo.com/source/custom_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbkarrlander%2Fdot-scrum%2Fmaster%2FREADME.md)
+![Scrum Theory](https://g.gravizo.com/source/scrum_theory_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbkarrlander%2Fdot-scrum%2Fmaster%2FREADME.md)
 <details> 
 <summary></summary>
-custom_mark
+scrum_theory_mark
     digraph scrum_theory {
     
         node [shape=box];
@@ -66,7 +66,48 @@ custom_mark
         { rank=same; scrum process_framework scrum_team }
         { rank=same; pillars scrum_values }
     }
-custom_mark
+scrum_theory_mark
+</details>
+
+### The Scrum Team
+
+![The Scrum Team](https://g.gravizo.com/source/scrum_team_mark?https%3A%2F%2Fraw.githubusercontent.com%2Fbkarrlander%2Fdot-scrum%2Fmaster%2FREADME.md)
+<details> 
+<summary></summary>
+scrum_team_mark
+    digraph scrum_team {
+    
+    node [shape=box];
+
+    // nodes; 
+    
+    scrum_team -> product_owner;
+    scrum_team -> dev_team;
+    scrum_team -> scrum_master;
+    
+    product_owner -> work_items [label="prioritizes"];
+    dev_team -> work_items [label="delivers\n\"Done\""];
+    
+    dev_team -> work [label="says \"how\" \n& \"how much\""]
+        
+    product_owner -> business_value [label="maximizes"];
+    work_items -> business_value [label="deliver"]
+    
+    scrum_master -> scrum [label="promotes & provides\nsupport for"];
+
+    // node labels;
+    scrum [label="Scrum"];
+    scrum_master [label="Scrum Master"]
+    product_owner [label="Product Owner"]
+    dev_team [label="Dev Team"]
+    scrum_team [label="The Scrum Team"]
+    work_items [label="work items"]
+    business_value [label="business value"]
+    
+    // layout;
+    //{ rank=same; business_value work_items scrum }
+    }
+scrum_team_mark
 </details>
 
 ### Visualization
